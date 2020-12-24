@@ -3,12 +3,13 @@
  */
 package hr.ericsson.etkc.ebusiness;
 
-public class AppLauncher {
+public class AppLauncher {	
     public boolean someLibraryMethod() {
         return true;
     }
     
     public static void main(String[] args) {
+    	System.loadLibrary("opencv_java450");
     	Main.main(args);
     	  
 	}

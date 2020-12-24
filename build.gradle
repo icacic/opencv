@@ -27,12 +27,12 @@ repositories {
 
 javafx {
     version = "15.0.1"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing' ]
 }
 
 dependencies {      
     testImplementation 'junit:junit:4.12'    
-    compile files('libs/opencv-451.jar') 
+    implementation name: 'opencv-451' 
 }
 
 mainClassName = " hr.ericsson.etkc.ebusiness.AppLauncher"
