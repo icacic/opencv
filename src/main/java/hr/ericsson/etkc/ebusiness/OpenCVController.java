@@ -38,9 +38,7 @@ public class OpenCVController {
 	private static int cameraId = 0;
 
 	/**
-	 * The action triggered by pushing the button on the GUI
-	 *
-	 * @param event the push button event
+	 * Ovo se poziva kad se gumb stisne
 	 */
 	@FXML
 	protected void startCamera(ActionEvent event) {
@@ -97,10 +95,10 @@ public class OpenCVController {
 
 	private Mat detectFace(Mat mat) {
 		try {
-			CascadeClassifier cascadeClassifier = new CascadeClassifier("C:\\dev\\opencv\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_alt.xml");
+			CascadeClassifier cascadeClassifier = new CascadeClassifier("src/main/resources/haarcascade_frontalface_alt.xml");
 			MatOfRect facesDetected = new MatOfRect();
 			int minFaceSize = Math.round(mat.rows() * 0.1f);
-			cascadeClassifier.load("C:\\dev\\opencv\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_alt.xml");
+			cascadeClassifier.load("src/main/resources/haarcascade_frontalface_alt.xml");
 			cascadeClassifier.detectMultiScale(mat, facesDetected, 1.1, 3, Objdetect.CASCADE_SCALE_IMAGE,
 					new Size(minFaceSize, minFaceSize), new Size());
 			Rect[] facesArray = facesDetected.toArray();
@@ -113,8 +111,6 @@ public class OpenCVController {
 			e.printStackTrace();
 			return mat;
 		}
-		
-
 	}
 
 	public Image mat2Img(Mat mat) {

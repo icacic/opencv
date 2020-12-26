@@ -9,6 +9,7 @@ public class AppLauncher {
     }
     
     public static void main(String[] args) {
+    	System.out.println("Working Directory = " + System.getProperty("user.dir"));
     	System.loadLibrary("opencv_java450");
     	Main.main(args);
     	  
